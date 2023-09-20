@@ -1,0 +1,70 @@
+fishes:
+  trota:
+    display-name: "Trota"
+    rarity: "COMMON"
+    display-lore:
+      - "&7&oVendi questo pesce al pescatore"
+    material: "RAW_FISH"
+    glow: true
+    start-sell-price: 10000.0
+    weight:
+      min: 1.00
+      max: 2.00
+  sogliola:
+    display-name: "Sogliola"
+    rarity: "COMMON"
+    display-lore:
+      - "&7&oVendi questo pesce al pescatore"
+    material: "COOKED_FISH"
+    glow: true
+    start-sell-price: 10000.0
+    weight:
+      min: 1.00
+      max: 2.50
+  squalo:
+    display-name: "Squalo"
+    rarity: "LEGENDARY"
+    display-lore:
+      - "&7&oVendi questo pesce al pescatore"
+    material: "COOKED_MUTTON"
+    glow: true
+    start-sell-price: 75000.0
+    weight:
+      min: 300.00
+      max: 750.00
+
+default-lore:
+  first: true
+  display-lore:
+    - ""
+    - "&fRarità: {rarity}"
+    - "&fPeso: {weight}kg"
+    - ""
+
+rarity:
+  common:
+    display-name: "COMUNE"
+    color: "&7&l"
+    percentage: 0.40
+  rare:
+    display-name: "RARO"
+    color: "&9&l"
+    percentage: 0.30
+  epic:
+    display-name: "EPICO"
+    color: "&5&l"
+    percentage: 0.20
+  legendary:
+    display-name: "LEGGENDARIO"
+    color: "&6&l"
+    percentage: 0.10
+
+msg:
+  not-permission: "&cNon hai il permesso di eseguire questo comando"
+  not-integer: "&cNon hai inserito un intero valido"
+  not-player: "&cPlayer non trovato"
+  successfully-sell: "&aHai venduto {quantity} pesci per ${price}"
+  no-fish-sell: "&cNon hai nessun pesce nell'inventario"
+
+nbt:
+  price: "easyfish_price"

@@ -1,0 +1,14 @@
+name: EasyFish
+version: '${project.version}'
+main: it.easymc.easyfish.EasyFish
+depend:
+  - NBTAPI
+  - Vault
+commands:
+  easyfish:
+    description: Manage custom fishes
+permissions:
+  easyfish.admin.give:
+    description: Give a custom fish
+  easyfish.sellall:
+    description: Sell all custom fishes inside sender's inventory
