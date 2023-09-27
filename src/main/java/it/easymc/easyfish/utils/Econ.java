@@ -30,7 +30,7 @@ public class Econ {
                 if (itemStack != null){
                     NBTItem nbtItem = new NBTItem(itemStack);
                     if (nbtItem.hasTag(EasyFish.INS.getNbtTagPrice())){
-                        price += nbtItem.getDouble(EasyFish.INS.getNbtTagPrice());
+                        price += nbtItem.getDouble(EasyFish.INS.getNbtTagPrice()) * itemStack.getAmount();
                         quantity += itemStack.getAmount();
                         playerOnline.getInventory().remove(itemStack);
                     }
