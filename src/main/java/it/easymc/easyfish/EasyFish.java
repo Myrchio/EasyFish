@@ -35,13 +35,7 @@ public final class EasyFish extends JavaPlugin {
     public void onEnable() {
         loadConfig();
         saveConfig();
-        getDependencies();
-        getCommands();
-        this.random = new Random();
-        this.nbtTagPrice = getConfig().getString("nbt.price");
-        initialBasicFishes(getConfig().getConfigurationSection("fishes"));
-        initialWeightedObjects();
-
+        start();
     }
 
     @Override
@@ -49,8 +43,16 @@ public final class EasyFish extends JavaPlugin {
         // Plugin shutdown logic
     }
 
+    public void start(){
+        getDependencies();
+        getCommands();
+        this.random = new Random();
+        this.nbtTagPrice = getConfig().getString("nbt.price");
+        initialBasicFishes(getConfig().getConfigurationSection("fishes"));
+        initialWeightedObjects();
+    }
+
     private void loadConfig(){
-        saveDefaultConfig();
         getConfig().options().copyHeader(true);
         getConfig().options().copyDefaults(true);
     }
@@ -102,6 +104,7 @@ public final class EasyFish extends JavaPlugin {
                     Rarity.getRarity(fishesConfig.getString(fishName + ".rarity")),
                     new ArrayList<>(fishesConfig.getStringList(fishName + ".display-lore")),
                     Material.getMaterial(fishesConfig.getString(fishName + ".material")),
+                    (short) fishesConfig.getInt(fishName + ".data"),
                     fishesConfig.getBoolean(fishName + ".glow"),
                     fishesConfig.getDouble(fishName + ".start-sell-price"),
                     new Ranger(

@@ -23,7 +23,7 @@ public class Econ {
 
     public static void addMoneyFromInv(OfflinePlayer player){
         if (player.isOnline()){
-            double price = 0.0;
+            double price = 0.00;
             int quantity = 0;
             Player playerOnline = player.getPlayer();
             for (ItemStack itemStack : playerOnline.getInventory().getContents()){
@@ -36,13 +36,25 @@ public class Econ {
                     }
                 }
             }
-            if (price > 0.0)
+            if (price > 0.00)
                 addMoney(player, price, EasyFish.INS.getConfig().getString("msg.successfully-sell")
-                        .replace("{price}", String.valueOf(price))
+                        .replace("{price}", formatValue(price))
                         .replace("{quantity}", String.valueOf(quantity))
                 );
             else
                 Msg.send(playerOnline, EasyFish.INS.getConfig().getString("msg.no-fish-sell"));
         }
+    }
+
+    public static String formatValue(double value){
+        double m = 1000000.00;
+        double k = 1000.00;
+        if (value / m > 1){
+            return String.format("%.2fm", value/m);
+        }
+        if (value / k > 1){
+            return String.format("%.2fk", value/k);
+        }
+        return String.format("%.2f", value);
     }
 }

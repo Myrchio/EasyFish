@@ -5,6 +5,7 @@ fishes:
     display-lore:
       - "&7&oVendi questo pesce al pescatore"
     material: "RAW_FISH"
+    data: 0
     glow: true
     start-sell-price: 10000.0
     weight:
@@ -16,6 +17,7 @@ fishes:
     display-lore:
       - "&7&oVendi questo pesce al pescatore"
     material: "COOKED_FISH"
+    data: 0
     glow: true
     start-sell-price: 10000.0
     weight:
@@ -27,6 +29,7 @@ fishes:
     display-lore:
       - "&7&oVendi questo pesce al pescatore"
     material: "COOKED_MUTTON"
+    data: 0
     glow: true
     start-sell-price: 75000.0
     weight:
@@ -65,6 +68,7 @@ msg:
   not-player: "&cPlayer non trovato"
   successfully-sell: "&aHai venduto {quantity} pesci per ${price}"
   no-fish-sell: "&cNon hai nessun pesce nell'inventario"
+  successfully-reloaded: "&aEasyFish riavviato correttamente"
 
 nbt:
   price: "easyfish_price"

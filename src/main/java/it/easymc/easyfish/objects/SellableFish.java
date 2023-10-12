@@ -55,6 +55,7 @@ public class SellableFish {
 
     public NBTItem createNBTItem(){
         ItemStack itemStack = new ItemStack(basicFish.getMaterial());
+        itemStack.setDurability(basicFish.getDurability());
         ItemMeta itemMeta = itemStack.getItemMeta();
         itemMeta.setDisplayName(basicFish.getName());
         itemMeta.setLore(this.customLore());

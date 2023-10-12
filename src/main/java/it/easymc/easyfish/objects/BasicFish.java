@@ -15,15 +15,17 @@ public class BasicFish {
     private final Rarity rarity;
     private final ArrayList<String> defaultLore;
     private final Material material;
+    private final short durability;
     private final boolean glow;
     private final double defaultPrice;
     private final Ranger weightRange;
 
-    public BasicFish(String name, Rarity rarity, ArrayList<String> defaultLore, Material material, boolean glow, double defaultPrice, Ranger weightRange) {
+    public BasicFish(String name, Rarity rarity, ArrayList<String> defaultLore, Material material, short durability, boolean glow, double defaultPrice, Ranger weightRange) {
         this.name = ChatColor.translateAlternateColorCodes('&', name);
         this.rarity = rarity;
         this.defaultLore = Msg.translateList(defaultLore);
         this.material = material;
+        this.durability = durability;
         this.glow = glow;
         this.defaultPrice = defaultPrice;
         this.weightRange = weightRange;
@@ -43,6 +45,10 @@ public class BasicFish {
 
     public Material getMaterial() {
         return material;
+    }
+
+    public short getDurability() {
+        return durability;
     }
 
     public boolean isGlow() {

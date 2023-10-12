@@ -59,6 +59,12 @@ public class EasyFishCommand implements CommandExecutor {
                     return true;
                 }
             }
+            if (args[0].equalsIgnoreCase("reload")){
+                EasyFish.INS.reloadConfig();
+                EasyFish.INS.start();
+                Msg.send(sender, EasyFish.INS.getConfig().getString("msg.successfully-reloaded"));
+                return true;
+            }
         }
         Msg.send(sender, EasyFish.INS.getConfig().getString("msg.not-permission"));
         return true;
